@@ -1,0 +1,23 @@
+@startuml
+
+class StateManager {
+    - currentState: State
+    + setCurrentState(state: State): void
+    + getCurrentState(): State
+}
+interface State {
+    handler(stateManager: StateManager):any
+}
+class FailState
+class PassState
+class GoodState
+class ExcellentState
+
+State <.. FailState
+State <.. PassState
+State <.. GoodState
+State <.. ExcellentState
+StateManager o--> State
+State ..> StateManager
+
+@enduml

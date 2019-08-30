@@ -1,0 +1,20 @@
+@startuml
+
+class Originator{
+    - state: any
+    + createMemento(): Memento
+    + recover(memento: Memento):void
+}
+class Memento{
+    - state: any
+    + setter/getter
+}
+class Caretaker{
+    - memento: Memento
+    + setter/getter
+}
+
+Originator ..> Memento
+Caretaker o--> Memento
+
+@enduml

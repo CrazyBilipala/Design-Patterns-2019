@@ -1,0 +1,34 @@
+@startuml
+
+abstract class Subject{
+    observers: List<Observer>
+    attach(observer: Observer): void
+    detach(observer: Observer): void
+    notice(): void
+}
+note top: 抽象主题，notice()方法中遍历观察者执行更新操作
+class ConcreteSubject {
+    - action: String
+}
+note bottom: 具体主题，有对应的通知内容字段
+
+interface Observer {
+    void update()
+}
+
+class ConcreteObserverA {
+    update()
+}
+note left: 具体观察者A
+class ConcreteObserverB {
+    update()
+}
+note left: 具体观察者B
+
+Subject <|-- ConcreteSubject
+Observer <|.. ConcreteObserverA
+Observer <|.. ConcreteObserverB
+Observer <-- Subject
+ConcreteObserverA --> ConcreteSubject
+ConcreteObserverB --> ConcreteSubject
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+
+class Client
+note right: 客户断
+class Facade
+note right: 门面
+class Communication1
+note bottom: 复杂的类1
+class Communication2
+note bottom: 复杂的类2
+
+Client --> Facade
+Facade --> Communication1
+Facade --> Communication2
+@enduml

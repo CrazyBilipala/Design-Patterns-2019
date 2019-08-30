@@ -1,0 +1,33 @@
+@startuml
+
+class Client
+interface IFactory
+abstract class ProductSeriesA
+abstract class ProductSeriesB
+class ChinaFactory
+class JapanFactory
+class ProductA1
+class ProductA2
+class ProductB1
+class ProductB2
+
+ProductSeriesA <|-- ProductA1
+ProductSeriesA <|-- ProductA2
+ProductSeriesB <|-- ProductB1
+ProductSeriesB <|-- ProductB2
+
+IFactory <|.. ChinaFactory
+IFactory <|.. JapanFactory
+
+Client --> IFactory
+Client --> ProductSeriesA
+Client --> ProductSeriesB
+
+ChinaFactory ..> ProductA1
+ChinaFactory ..> ProductB1
+
+JapanFactory ..> ProductA2
+JapanFactory ..> ProductB2
+
+
+@enduml

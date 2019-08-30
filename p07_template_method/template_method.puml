@@ -1,0 +1,10 @@
+@startuml
+
+abstract class Template{
+    abstract method(): any
+}
+
+class Component extends Template{
+    method(): any
+}
+@enduml

@@ -1,0 +1,32 @@
+@startuml
+
+class Director {
+    - builder: Builder
+    + productLine(): void
+}
+note top:指挥者类。可利用构造函数赋值builder对象。productLine()函数的作用是规范产品生产的过程，即流水线（需要利用builder进行产品生产）。
+
+abstract class Builder{
+    abstract build(): Product
+    abstract methodA(): void
+    abstract methodB(): void
+}
+note top: 抽象建造者，规定应有的生产方法和返回产品。
+class ConcreteBuilder{
+    - concreteProduct: ConcreteProduct
+    build(): Product
+    methodA(): void
+    methodB(): void
+}
+note top: 具体建造者
+class ConcreteProduct
+note left: 抽象产品
+class Product
+note right: 具体产品
+
+Product <|-- ConcreteProduct
+Builder <|-- ConcreteBuilder
+Director o-- Builder
+Builder ..> Product
+ConcreteBuilder ..> ConcreteProduct
+@enduml

@@ -1,0 +1,19 @@
+@startuml
+
+interface Tree {
+    add(tree: Tree):void
+    remove(tree: Tree):void
+    operate(any:any):void
+}
+
+class Branch{
+    - trees: List<Tree>
+}
+
+class Leaf
+
+Tree <|.. Branch
+Tree <|.. Leaf
+Branch o--> Tree
+
+@enduml
