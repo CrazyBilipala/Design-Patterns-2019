@@ -1,0 +1,41 @@
+@startuml
+
+abstract class Color
+note right: 产品父类
+
+class Red
+note right: 具体产品子类
+class Yellow
+note right: 具体产品子类
+class Blue
+note right: 具体产品子类
+
+interface IFactory {
+    factoryCreate(): Color
+}
+note left : 工厂接口
+class RedFactory  {
+    factoryCreate(): Color
+}
+note right: 具体工厂
+class YellowFactory  {
+    factoryCreate(): Color
+}
+note right: 具体工厂
+class BlueFactory  {
+    factoryCreate(): Color
+}
+note right: 具体工厂
+
+Red <.. RedFactory
+Yellow <.. YellowFactory
+Blue <.. BlueFactory
+
+Color <|-- Red
+Color <|-- Yellow
+Color <|-- Blue
+
+IFactory <|.. RedFactory
+IFactory <|.. YellowFactory
+IFactory <|.. BlueFactory
+@enduml

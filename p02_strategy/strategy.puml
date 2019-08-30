@@ -1,0 +1,25 @@
+@startuml
+
+abstract class Strategy {
+    + tricks(): void
+}
+
+class StrategyA extends Strategy{
+    + tricks(): void
+}
+
+class StrategyB extends Strategy{
+    + tricks(): void
+}
+
+class StrategyC extends Strategy{
+    + tricks(): void
+}
+
+class StrategyContext {
+    - strategy: Strategy
+}
+
+StrategyContext <--o Strategy
+
+@enduml

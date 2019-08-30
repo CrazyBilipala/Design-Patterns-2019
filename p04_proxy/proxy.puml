@@ -1,0 +1,22 @@
+@startuml
+
+interface Contract{
+    sing(): void
+}
+note left: 合同类
+class Celebrity {
+    + sing(): void
+}
+note right: 明星类
+class Proxy{
+    - celebrity: Celebrity
+    + Proxy(celebrity: Celebrity)
+    + sing():void
+}
+note right: 代理类
+
+Contract <|.. Celebrity
+Contract <|.. Proxy
+Proxy --> Celebrity
+
+@enduml

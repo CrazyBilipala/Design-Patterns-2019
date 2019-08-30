@@ -1,0 +1,35 @@
+@startuml
+
+abstract class Component {
+    abstract method(): any
+}
+note left : 组件规划类
+class OriginalComponent {
+    method(): any
+}
+note left : 原始组件实现类
+
+class DecoratorComponent {
+    - component: Component
+    + setComponent(component: Component): void
+    + method(): any //利用component的method()实现method()方法
+}
+note left : 装饰父类
+
+class DecoratorComponentA {
+    + method(): any //先使用super.method()方法确保装饰链
+}
+note left : 装饰子类A
+
+class DecoratorComponentB {
+    + method(): any //先使用super.method()方法确保装饰链
+}
+note left : 装饰子类B
+
+Component <|-- OriginalComponent
+Component <--o DecoratorComponent
+DecoratorComponent <|-- DecoratorComponentA
+DecoratorComponent <|-- DecoratorComponentB
+
+
+@enduml
