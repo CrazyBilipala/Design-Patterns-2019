@@ -1,0 +1,50 @@
+@startuml
+
+interface Hero{
+    + show(): void
+}
+note right : 英雄类
+
+class Akali{
+    - name: String
+    + show():void
+}
+note bottom : 阿卡丽
+
+class Olaf{
+    - name: String
+    + show():void
+}
+note bottom : 奥拉夫
+
+class Corki{
+    - name: String
+    + show():void
+}
+note bottom : 飞机
+
+class Ezreal{
+    - name: String
+    + show():void
+}
+note bottom : EZ
+
+class Lux{
+    - name: String
+    + show():void
+}
+note bottom : 光辉
+
+class HeroFactory{
+    + createHero(heroName: String): Hero
+}
+note bottom: 英雄工厂
+
+Hero <|.. Akali
+Hero <|.. Olaf
+Hero <|.. Corki
+Hero <|.. Ezreal
+Hero <|.. Lux
+
+Hero <-- HeroFactory
+@enduml
