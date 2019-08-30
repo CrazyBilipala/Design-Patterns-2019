@@ -1,0 +1,20 @@
+@startuml
+
+class Singer
+class JiTai
+class MeiMei
+class JiTaiSing
+class MeiMeiSing
+class JiTaiShow
+class MeiMeiShow
+class MeiMeiOffice
+
+Singer <|-- JiTai
+Singer <|-- MeiMei
+JiTai <|-- JiTaiSing
+JiTai <|-- JiTaiShow
+MeiMei <|-- MeiMeiSing
+MeiMei <|-- MeiMeiShow
+MeiMei <|-- MeiMeiOffice
+
+@enduml

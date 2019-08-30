@@ -1,0 +1,19 @@
+@startuml
+
+class FlyweightFactory{
+    + getFlyWeight(key: any): Flyweight
+}
+interface Flyweight {
+    + operate(any: any): any
+}
+class ConcreteFlyweight1
+class ConcreteFlyweight2
+
+Flyweight <|-- ConcreteFlyweight1
+Flyweight <|-- ConcreteFlyweight2
+FlyweightFactory o--> Flyweight
+FlyweightFactory --> ConcreteFlyweight1
+FlyweightFactory --> ConcreteFlyweight2
+
+
+@enduml

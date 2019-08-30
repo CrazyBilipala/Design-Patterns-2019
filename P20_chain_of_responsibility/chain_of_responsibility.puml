@@ -1,0 +1,16 @@
+@startuml
+
+abstract class Handler{
+    + successor: Handler
+    + setSuccessor(handler: Handler): void
+    + handlerRequest(any: any):void
+}
+class OneHandler
+class TwoHandler
+class ThreeHandler
+
+Handler <|-- OneHandler
+Handler <|-- TwoHandler
+Handler <|-- ThreeHandler
+
+@enduml

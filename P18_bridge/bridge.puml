@@ -1,0 +1,21 @@
+@startuml
+
+class Singer
+class JiTai
+class MeiMei
+class Skill
+class Sing
+class Show
+class Office
+
+Singer <|-- JiTai
+Singer <|-- MeiMei
+
+Skill <|-- Sing
+Skill <|-- Show
+Skill <|-- Office
+
+Skill o--> Singer
+
+
+@enduml

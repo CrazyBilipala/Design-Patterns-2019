@@ -1,0 +1,15 @@
+@startuml
+
+class Context
+abstract class AbstractExpression
+class ConcreteExpressionOne
+class ConcreteExpressionTwo
+class Client
+
+AbstractExpression <|-- ConcreteExpressionOne
+AbstractExpression <|-- ConcreteExpressionTwo
+Context <--o AbstractExpression
+Client --> Context
+Client --> AbstractExpression
+
+@enduml

@@ -1,0 +1,30 @@
+@startuml
+
+abstract class Mediator {
+    + messageHandler(any: any, singer: Singer)
+}
+class Angel {
+    - jiTai: Singer
+    - meiMei: Singer
+    + messageHandler(any: any, singer: Singer)
+}
+abstract class Singer{
+    + send(any: any):void
+    + notify(any: any):void
+}
+class JiTai{
+    - mediator: Mediator
+    + send(any: any):void //这里使用了Mediator的messageHandler方法
+}
+class MeiMei
+
+Mediator <|-- Angel
+Singer <|-- JiTai
+Singer <|-- MeiMei
+
+Mediator --o Singer
+
+Angel --> MeiMei
+Angel --> JiTai
+
+@enduml
